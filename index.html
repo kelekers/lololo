@@ -37,13 +37,37 @@
         header nav ul {
             list-style: none;
             display: flex;
+            gap: 20px;
         }
-        header nav ul li {
-            margin-left: 20px;
+       @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            align-items: center;
         }
-        header .social-media a {
-            margin-left: 10px;
+        header nav ul {
+            flex-direction: column; /* Ubah dari horizontal ke vertikal */
+            gap: 10px;
         }
+        header .social-media {
+            margin-top: 10px;
+        }
+    }
+        .hamburger-menu {
+        display: none;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    @media (max-width: 768px) {
+        .hamburger-menu {
+            display: block; /* Tampilkan hanya di layar kecil */
+        }
+        header nav ul {
+            display: none; /* Sembunyikan menu secara default */
+        }
+        header nav ul.active {
+            display: flex; /* Tampilkan menu ketika diaktifkan */
+        }
+    }
 
         /* HERO SECTION */
         .hero {
@@ -197,6 +221,7 @@
         <h1>
             Lolosin<span class="small-text">.com</span>
         </h1>
+        <div class="hamburger-menu" onclick="toggleMenu()">☰</div> <!-- Ikon menu -->
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -277,7 +302,12 @@
     <!-- Footer -->
     <footer>
         <div class="footer-links">
-            <div>
-                <h4>Lolosin Teams</h4>
-            </div>
-            <div>
+            <h4>Lolosin Teams</h4>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('header nav ul');
+            nav.classList.toggle('active');
+        }
+    </script>
