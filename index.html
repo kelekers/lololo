@@ -39,8 +39,14 @@
             display: flex;
             gap: 20px;
         }
-        
-       @media (max-width: 768px) {
+        header nav ul li {
+            margin-left: 20px;
+        }
+        header .social-media a {
+            margin-left: 50px;
+        }
+
+        @media (max-width: 768px) {
         header {
             flex-direction: column;
             align-items: center;
@@ -52,19 +58,10 @@
         header .social-media {
             margin-top: 10px;
         }
-        .about {
-                flex-direction: column;
-                text-align: center;
-            }
-        .about-text {
-                font-size: medium; /* Font lebih kecil untuk layar kecil */
-                width: 100%;
-            }
-        .about img {
-                width: 50%;
-                margin-top: 20px;
-            }
-        .hamburger-menu {
+    }
+
+    /* Tambahkan hamburger menu */
+    .hamburger-menu {
         display: none;
         font-size: 2rem;
         cursor: pointer;
@@ -231,22 +228,22 @@
             }
         </style>
         <h1>
-            Lolosin<span class="small-text">.com</span>
-        </h1>
-        <div class="hamburger-menu" onclick="toggleMenu()">☰</div> <!-- Ikon menu -->
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Service</a></li>
-                <li><a href="#">Our Tutors</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="social-media">
-            <a href="#">Instagram</a>
-            <a href="#">Youtube</a>
-        </div>
+        Lolosin<span class="small-text">.com</span>
+    </h1>
+    <div class="hamburger-menu" onclick="toggleMenu()">☰</div> <!-- Ikon menu -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Service</a></li>
+            <li><a href="#">Our Tutors</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="social-media">
+        <a href="#">Instagram</a>
+        <a href="#">Youtube</a>
+    </div>
     </header>
 
     <!-- Hero Section -->
@@ -288,6 +285,10 @@
     <!-- Statistics -->
     <section class="stats">
         <div>
+            <h2>10</h2>
+            <p>Rating Siswa</p>
+        </div>
+        <div>
             <h2>100+</h2>
             <p>Siswa Aktif</p>
         </div>
@@ -310,10 +311,10 @@
     <!-- Footer -->
     <footer>
         <div class="footer-links">
-            <h4>Lolosin Teams</h4>
-        </div>
-    </footer>
-    <script>
+            <div>
+                <h4>Lolosin Teams</h4>
+            </div>
+            <script>
         function toggleMenu() {
             const nav = document.querySelector('header nav ul');
             nav.classList.toggle('active');
